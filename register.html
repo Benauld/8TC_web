@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home - ViCoHo Website</title>
+    <link rel="stylesheet" href="src/indexStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="src/register.js"></script>
+    <script>
+        $('document').ready(function () {
+            $('#toggle').click(function () {
+                $('.menu').slideToggle();
+            });
+        });
+    </script>
+</head>
+<body ng-app="regApp" >
+    <div class="firstPage">
+        <header>
+            <nav class="mainNav">
+                <div class="logoParent">
+                    <a href="index.html" title="logo"><h1><img src="images/8tc temp.png" alt="8TC logo" height="60" width="115"></h1></a>
+                </div>
+                <div class="mobileParent">
+                    <p id="toggle"><img src="images/small hamburger menu.png" alt="Menu" height="30" width="30"></p>
+                </div>
+                <ul class="menu">
+                    <li class="navHead"><a href="index.html"><h3>home</h3></a></li>
+                    <li class="navHead"><a href="https://www.vicoho.com/cnc/index.html" target="_blank"><h3>login</h3></a></li>
+                    <li class="navHead"><a href="about.html"><h3>about</h3></a></li>
+                    <li class="navHead"><a href="contact.html"><h3>contact</h3></a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="regForm">
+            <form ng-submit="newUser()" class="regForm">
+                <!--main body of text page 1-->
+                <h1 class="tagLine">
+                    Register for 8TC
+                </h1>
+                <p>In order to run Metamask you must be running Chrome as your browser.</p>
+                <button>Download Chrome</button><span>If you don't already have a recent copy.</span>
+                <p>In order to run the 8TX web app you nned to have Metamask and have set up an Ethereum wallet.</p>
+                <button>Get Metamask add-on to Chrome</button>
+                <input type="text" placeholder="paste external wallet Id here" ng-model="register.walletIdEth" />
+                <p>Next in order to deposit or withdraw FIAT currency (and to be whitelisted as part of the group.</p>
+                <p>Please get a bank account from our FCA registered eMoney partner - SuperMoney</p>
+                <button>Get a SuperMoney Bank Account</button>
+                <input type="text" placeholder="SuperMoney Account Reference here" ng-model="register.eMoneyId" />
+                <p>Lastly if you wish to sell or receive Bitcoin. Please let us know your wallet Id</p>
+                <input type="text" placeholder="Paste your Bitcoin wallet Id here" ng-model="register.walletIdBTC" />
+                <input type="submit" value="Register Now" />
+            </form>
+        </section>
+
+
+
+
+        < <div class="iconBoxes" ng-controller="myRegCtrl">
+              <article class="trust" ng-mouseenter="openTrust=true" ng-mouseleave="openTrust=false">
+                  <p class="boxText" ng-hide="openTrust"><i class="fas fa-hand-holding-heart" style="font-size:48px;"></i></p>
+                  <p class="boxText" ng-hide="openTrust">Trust</p>
+                  <p class="boxtext" ng-show="openTrust"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - FCA Regulated UK entity</p>
+                  <p class="boxtext" ng-show="openTrust"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Assets secured using regulated securities</p>
+                  <p class="boxtext" ng-show="openTrust"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Obligation to settle OTC trades</p>
+                  <p class="boxtext" ng-show="openTrust"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Immediate Delivery vs. Payment settlement</p>
+                  <p class="boxtext" ng-show="openTrust"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Members own organisation</p>
+              </article>
+              <article class="transparency" ng-mouseenter="openTrans=true" ng-mouseleave="openTrans=false">
+                  <p class="boxText" ng-hide="openTrans"><i class="fas fa-search" style="font-size:48px;color:darkred"></i></p>
+                  <p class="boxText" ng-hide="openTrans">Transparent</p>
+                  <p class="boxtext" ng-show="openTrans"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Visibility of counterparty assets</p>
+                  <p class="boxtext" ng-show="openTrans"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Members only</p>
+                  <p class="boxtext" ng-show="openTrans"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Clear competitive commissions with no spreads</p>
+                  <p class="boxtext" ng-show="openTrans"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Zero intermediaries</p>
+              </article>
+              <aside class="traceability" ng-mouseenter="openTrace=true" ng-mouseleave="openTrace=false">
+                  <p class="boxText" ng-hide="openTrace"><i class="fas fa-fingerprint" style="font-size:48px;color:darkred"></i></p>
+                  <p class="boxText" ng-hide="openTrace">Traceable</p>
+                  <p class="boxtext" ng-show="openTrace"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - KYC / AML registration for whole community</p>
+                  <p class="boxtext" ng-show="openTrace"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Forever transaction history of all participants</p>
+                  <p class="boxtext" ng-show="openTrace"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Fund provenance checks</p>
+                  <p class="boxtext" ng-show="openTrace"><i class="fas fa-check-circle" style="font-size:14px;color:green;"></i> - Deals completed immediately</p>
+              </aside>
+        </div>
+
+
+    </div>
+   
+    <!--Footer with Copyright-->
+    <footer class="mainFooter">
+        <small>
+            &copy; <time>2018</time>
+            <a href="index.html">ViCoHo Ltd</a>
+            <author>Developer: Ben Auld</author>
+        </small>
+</body>
+</html>
